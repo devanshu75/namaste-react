@@ -22,7 +22,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(myElement);
 ```
 
-**_JSX is converted into React Element which is then converted into HTMLElement during render._**
+**JSX is converted into React Element which is then converted into HTMLElement during render.**
 
 `React.createElement => Object => HTMLElement(render)`
 
@@ -130,4 +130,4 @@ Babel primary focus is to translate one version of JavaScript into another versi
 flowchart TD
   JSX["JSX Code"] --> ReactCreateElement["React.createElement()"]
   ReactCreateElement --> ReactObject["ReactJS Object"]
-  ReactObject --> HTMLElem["HTML Element (rendered to DOM)"]
+  ReactObject --> HTMLElement["HTML Element (rendered to DOM)"]
