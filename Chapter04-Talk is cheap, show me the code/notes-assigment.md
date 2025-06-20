@@ -182,3 +182,42 @@ React Fiber is a concept of ReactJS that is used to render a system faster, smoo
 - Pause,resume, and restart rendering work on components as new updates come in
 - Reuse previously competed work and even abort it if not needed
 - Split work into chunks and prioritize tasks based on importance.
+
+## Why we need keys in React? When do we need keys in React?
+
+Keys help React identify which items have changed,are added, or
+are removed. The best way to uniquely identifies a list item among siblings. Most often we use `ID's` from our data as keys.When we don't have any `IDs` for rendered items, If there is no stable ID We may use **index** as the last option
+
+```jsx
+const todoItems = todos.map((todo) => <li key={todo.id}>{todo.text}</li>);
+
+const todoItems = todos.map((todo, index) => (
+  // Only do this if items have no stable IDs
+  <li key={index}>{todo.text}</li>
+));
+```
+
+- It is highly recommended not to used index as keys if the order of items may change.
+- Keys used within arrays should be unique among their siblings.
+
+## Can we use index as keys in React?
+
+Yes, we can use the index as keys, but it is not considered as a good practice to use them because if the order of items may change. This can negatively impact performance and may cause issues with component state. Keys are taken from each object which is being rendered. There might be a possibility that if we modify the incoming data react may render them in unusual order.
+
+## What is props in React?
+
+props stands for properties. Props are arguments passed into React components. props are used in React to pass data from one component to another (from a parent component to a child component(s)). They are useful when you want the flow of data in your app to be dynamic.
+
+```jsx
+function App() {
+  return (
+    <div className="App">
+      <Tool name="Chetan Nada" tool="Figma" /> // name and tool are props
+    </div>
+  );
+}
+```
+
+## What is Config Driven UI?
+
+Config Driven UI are based on the configurations of the data application receives. It is rather a good practice to use config driven UIs to make application for dynamic. It is a very common & basic approach to interact with the User. It provides a generic interface to develop things which help your project scale well. It saves a lot of development time and effort. A typical login form, common in most of the Apps. Most of these forms also get frequent updates as the requirements increase in terms of Form Validations, dropdown options,.. or design changes.
