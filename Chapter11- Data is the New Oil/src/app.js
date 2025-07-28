@@ -12,6 +12,7 @@ import UserContext from "./utils/UserContext";
 import Error from "./components/Error";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+
 // import Grocery from "./components/Grocery";
 
 const Grocery = lazy(() => import("./components/Grocery"));
